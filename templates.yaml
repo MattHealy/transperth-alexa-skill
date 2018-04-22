@@ -1,0 +1,24 @@
+trainlines: Which train line? For example, Mandurah line.
+direction: |
+    <speak>
+        Which direction? <emphasis level="strong">To</emphasis> Perth or <emphasis level="strong">From</emphasis> Perth?
+    </speak>
+station: Which station? For example, Bull Creek station.
+list_trainlines: |
+    Available train lines are: {{ trainlines }}.
+    Which train line do you choose? For example, Mandurah line.
+list_trainlines_reprompt: Which train line do you choose? For example, Mandurah line.
+list_stations: |
+    Available stations on the {{ trainline }} line are: {{ stations }}.
+    Which station do you choose? For example, Bull creek station.
+list_stations_reprompt: Which station do you choose? For example, Bull creek station.
+next_time: |
+    The next train from {{ station }} is scheduled to depart at {{ next_time }}.
+error_getting_times: |
+    Sorry, I was unable to find train departure times. The error was: {{ message }}. Please try again later.
+bye: O.K.
+help: |
+    I can find the next train departure time for your station on the Transperth network.
+    When saying train lines, don't forget to add "line" afterwards, such as Mandurah line. 
+    When saying stations, don't forget to add "station" afterwards, such as Mandurah station.
+    For a list of train lines, ask what train lines are available. Which train line do you choose?

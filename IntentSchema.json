@@ -1,0 +1,596 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "transperth",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "TrainlineIntent",
+                    "slots": [
+                        {
+                            "name": "TrainLine",
+                            "type": "LIST_OF_TRAIN_LINES"
+                        }
+                    ],
+                    "samples": [
+                        "{TrainLine} line"
+                    ]
+                },
+                {
+                    "name": "SupportedTrainlinesIntent",
+                    "slots": [],
+                    "samples": [
+                        "What train lines are supported",
+                        "What are the train lines",
+                        "What train lines are available",
+                        "What train lines are there"
+                    ]
+                },
+                {
+                    "name": "SupportedStationsIntent",
+                    "slots": [
+                        {
+                            "name": "TrainLine",
+                            "type": "LIST_OF_TRAIN_LINES"
+                        }
+                    ],
+                    "samples": [
+                        "What stations are on the {TrainLine} line"
+                    ]
+                },
+                {
+                    "name": "DirectionIntent",
+                    "slots": [
+                        {
+                            "name": "Direction",
+                            "type": "LIST_OF_DIRECTIONS",
+                            "samples": [
+                                "from perth",
+                                "to perth"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{Direction}"
+                    ]
+                },
+                {
+                    "name": "StationIntent",
+                    "slots": [
+                        {
+                            "name": "Station",
+                            "type": "LIST_OF_STATIONS"
+                        }
+                    ],
+                    "samples": [
+                        "{Station} station"
+                    ]
+                },
+                {
+                    "name": "OneShotStationIntent",
+                    "slots": [
+                        {
+                            "name": "Station",
+                            "type": "LIST_OF_STATIONS",
+                            "samples": [
+                                "{Station}"
+                            ]
+                        },
+                        {
+                            "name": "TrainLine",
+                            "type": "LIST_OF_TRAIN_LINES"
+                        },
+                        {
+                            "name": "Direction",
+                            "type": "LIST_OF_DIRECTIONS"
+                        }
+                    ],
+                    "samples": [
+                        "When does the next train from {Station} leave",
+                        "When does the next train leave from {Station}",
+                        "When does the next train leave {Station} ",
+                        "When does the next train leave {Station} station on the {TrainLine} line {Direction} "
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "LIST_OF_TRAIN_LINES",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "midland"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thornlie"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mandurah"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "joondalup"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fremantle",
+                                "synonyms": [
+                                    "free oh",
+                                    "freo"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "armadale"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_DIRECTIONS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "from perth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "to perth"
+                            }
+                        }
+                    ]
+                },
+{
+    "name": "LIST_OF_STATIONS",
+    "values": [
+        {
+            "name": {
+                "value": "armadale"
+            }
+        },
+        {
+            "name": {
+                "value": "sherwood"
+            }
+        },
+        {
+            "name": {
+                "value": "challis"
+            }
+        },
+        {
+            "name": {
+                "value": "kelmscott"
+            }
+        },
+        {
+            "name": {
+                "value": "seaforth"
+            }
+        },
+        {
+            "name": {
+                "value": "gosnells"
+            }
+        },
+        {
+            "name": {
+                "value": "maddington"
+            }
+        },
+        {
+            "name": {
+                "value": "kenwick"
+            }
+        },
+        {
+            "name": {
+                "value": "beckenham"
+            }
+        },
+        {
+            "name": {
+                "value": "cannington"
+            }
+        },
+        {
+            "name": {
+                "value": "queens park"
+            }
+        },
+        {
+            "name": {
+                "value": "welshpool"
+            }
+        },
+        {
+            "name": {
+                "value": "oats street"
+            }
+        },
+        {
+            "name": {
+                "value": "carlisle"
+            }
+        },
+        {
+            "name": {
+                "value": "victoria park"
+            }
+        },
+        {
+            "name": {
+                "value": "burswood"
+            }
+        },
+        {
+            "name": {
+                "value": "perth stadium"
+            }
+        },
+        {
+            "name": {
+                "value": "claisebrook"
+            }
+        },
+        {
+            "name": {
+                "value": "mciver"
+            }
+        },
+        {
+            "name": {
+                "value": "fremantle"
+            }
+        },
+        {
+            "name": {
+                "value": "north fremantle"
+            }
+        },
+        {
+            "name": {
+                "value": "victoria street"
+            }
+        },
+        {
+            "name": {
+                "value": "mosman park"
+            }
+        },
+        {
+            "name": {
+                "value": "cottesloe"
+            }
+        },
+        {
+            "name": {
+                "value": "grant street"
+            }
+        },
+        {
+            "name": {
+                "value": "swanbourne"
+            }
+        },
+        {
+            "name": {
+                "value": "claremont"
+            }
+        },
+        {
+            "name": {
+                "value": "showgrounds"
+            }
+        },
+        {
+            "name": {
+                "value": "loch street"
+            }
+        },
+        {
+            "name": {
+                "value": "karrakatta"
+            }
+        },
+        {
+            "name": {
+                "value": "shenton park"
+            }
+        },
+        {
+            "name": {
+                "value": "daglish"
+            }
+        },
+        {
+            "name": {
+                "value": "subiaco"
+            }
+        },
+        {
+            "name": {
+                "value": "west leederville"
+            }
+        },
+        {
+            "name": {
+                "value": "city west"
+            }
+        },
+        {
+            "name": {
+                "value": "butler"
+            }
+        },
+        {
+            "name": {
+                "value": "clarkson"
+            }
+        },
+        {
+            "name": {
+                "value": "currambine"
+            }
+        },
+        {
+            "name": {
+                "value": "joondalup"
+            }
+        },
+        {
+            "name": {
+                "value": "edgewater"
+            }
+        },
+        {
+            "name": {
+                "value": "whitfords"
+            }
+        },
+        {
+            "name": {
+                "value": "greenwood"
+            }
+        },
+        {
+            "name": {
+                "value": "warwick"
+            }
+        },
+        {
+            "name": {
+                "value": "stirling"
+            }
+        },
+        {
+            "name": {
+                "value": "glendalough"
+            }
+        },
+        {
+            "name": {
+                "value": "leederville"
+            }
+        },
+        {
+            "name": {
+                "value": "perth underground"
+            }
+        },
+        {
+            "name": {
+                "value": "mandurah"
+            }
+        },
+        {
+            "name": {
+                "value": "warnbro"
+            }
+        },
+        {
+            "name": {
+                "value": "rockingham"
+            }
+        },
+        {
+            "name": {
+                "value": "wellard"
+            }
+        },
+        {
+            "name": {
+                "value": "kwinana"
+            }
+        },
+        {
+            "name": {
+                "value": "aubin grove"
+            }
+        },
+        {
+            "name": {
+                "value": "cockburn central"
+            }
+        },
+        {
+            "name": {
+                "value": "murdoch"
+            }
+        },
+        {
+            "name": {
+                "value": "bull creek"
+            }
+        },
+        {
+            "name": {
+                "value": "canning bridge"
+            }
+        },
+        {
+            "name": {
+                "value": "elizabeth quay"
+            }
+        },
+        {
+            "name": {
+                "value": "midland"
+            }
+        },
+        {
+            "name": {
+                "value": "woodbridge"
+            }
+        },
+        {
+            "name": {
+                "value": "east guildford"
+            }
+        },
+        {
+            "name": {
+                "value": "guildford"
+            }
+        },
+        {
+            "name": {
+                "value": "success hill"
+            }
+        },
+        {
+            "name": {
+                "value": "bassendean"
+            }
+        },
+        {
+            "name": {
+                "value": "ashfield"
+            }
+        },
+        {
+            "name": {
+                "value": "bayswater"
+            }
+        },
+        {
+            "name": {
+                "value": "meltham"
+            }
+        },
+        {
+            "name": {
+                "value": "maylands"
+            }
+        },
+        {
+            "name": {
+                "value": "mt lawley"
+            }
+        },
+        {
+            "name": {
+                "value": "east perth"
+            }
+        },
+        {
+            "name": {
+                "value": "thornlie"
+            }
+        }
+    ]
+}
+
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "DirectionIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Direction",
+                            "type": "LIST_OF_DIRECTIONS",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1135795412271.1184923516549"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "OneShotStationIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Station",
+                            "type": "LIST_OF_STATIONS",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.142476569051.898245035303"
+                            }
+                        },
+                        {
+                            "name": "TrainLine",
+                            "type": "LIST_OF_TRAIN_LINES",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "Direction",
+                            "type": "LIST_OF_DIRECTIONS",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1135795412271.1184923516549",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which direction, from Perth or to Perth?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.142476569051.898245035303",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What station?"
+                    }
+                ]
+            }
+        ]
+    }
+}
