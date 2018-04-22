@@ -54,9 +54,11 @@ def stationanswer(station):
 def one_shot_stationanswer(trainline, direction, station):
 
     if station is None:
+        print("station=None provided")
         return launch()
 
-    if not station_exists(station):
+    if not station_exists(station.lower()):
+        print("station_exists returned FALSE")
         return launch()
 
     if trainline is not None and trainline.lower() not in TRAINLINES:
@@ -64,7 +66,7 @@ def one_shot_stationanswer(trainline, direction, station):
     elif trainline:
         session.attributes['trainline'] = trainline
     else:
-        trainline = get_trainline_from_station(station)
+        trainline = get_trainline_from_station(station.lower())
         session.attributes['trainline'] = trainline
 
     if station.lower() not in STATIONS[trainline]:
