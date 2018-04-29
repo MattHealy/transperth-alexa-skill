@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "transperth",
+            "invocationName": "perth trains",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",

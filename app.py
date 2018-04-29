@@ -13,12 +13,12 @@ logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 @ask.launch
 def launch():
     trainline_msg = render_template('trainlines')
-    return question(trainline_msg)
+    return question(trainline_msg).reprompt(trainline_msg)
 
 
 @ask.intent("TrainlineIntent", mapping={'trainline': 'TrainLine'})
 def trainanswer(trainline):
-    if trainline.lower() not in TRAINLINES:
+    if trainline is None or trainline.lower() not in TRAINLINES:
         return supported_trainlines()
     else:
         session.attributes['trainline'] = trainline
@@ -97,7 +97,8 @@ def get_next_time():
         statement_text = render_template('error_getting_times',
                                          message=message)
 
-    return statement(statement_text).simple_card("Transperth", statement_text)
+    return statement(statement_text) \
+        .simple_card("perth trains", statement_text)
 
 
 def get_trainline_from_station(station):
@@ -128,7 +129,10 @@ def supported_trainlines():
 @ask.intent('SupportedStationsIntent', mapping={'trainline': 'TrainLine'})
 def supported_stations(trainline):
 
-    stations = ", ".join(sorted(STATIONS[trainline]))
+    if trainline is not None and trainline.lower() not in TRAINLINES:
+        return supported_trainlines()
+
+    stations = ", ".join(STATIONS[trainline])
 
     list_stations_text = render_template('list_stations', trainline=trainline,
                                          stations=stations)
