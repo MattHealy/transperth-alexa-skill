@@ -14,7 +14,7 @@ Click==7.0
 cryptography==43.0.1
 docutils==0.14
 durationpy==0.5
-Flask==1.0.3
+Flask==2.2.5
 Flask-Ask==0.9.8
 future==0.16.0
 hjson==3.0.1
